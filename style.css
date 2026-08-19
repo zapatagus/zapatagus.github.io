@@ -1,12 +1,17 @@
+# `style.css`
+
+```css
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     font-family:
@@ -21,7 +26,9 @@ body {
 }
 
 
-/* CONTENEDOR */
+/* ========================================
+   CONTENEDOR
+   ======================================== */
 
 .container {
     width: 100%;
@@ -33,7 +40,9 @@ body {
 }
 
 
-/* PERFIL */
+/* ========================================
+   PERFIL
+   ======================================== */
 
 .profile {
     text-align: center;
@@ -85,6 +94,12 @@ h1 {
 }
 
 
+.profession span {
+    color: #777;
+    margin: 0 3px;
+}
+
+
 .description {
     max-width: 470px;
 
@@ -98,7 +113,9 @@ h1 {
 }
 
 
-/* BOTONES */
+/* ========================================
+   BOTONES
+   ======================================== */
 
 .buttons {
     display: flex;
@@ -112,14 +129,14 @@ h1 {
 .button {
     width: 100%;
 
-    min-height: 56px;
+    min-height: 58px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    gap: 11px;
 
     padding: 15px 18px;
 
@@ -139,8 +156,7 @@ h1 {
 
     transition:
         transform 0.15s ease,
-        box-shadow 0.15s ease,
-        background 0.15s ease;
+        box-shadow 0.15s ease;
 }
 
 
@@ -157,7 +173,7 @@ h1 {
 }
 
 
-/* BOTÓN VER CV */
+/* VER CV */
 
 .button.primary {
     background: #202020;
@@ -168,7 +184,7 @@ h1 {
 }
 
 
-/* BOTÓN WHATSAPP */
+/* WHATSAPP */
 
 .button.whatsapp {
     background: #25d366;
@@ -179,16 +195,30 @@ h1 {
 }
 
 
-/* ICONOS */
+/* ========================================
+   ICONOS DE BOTONES
+   ======================================== */
 
-.icon {
-    font-size: 19px;
+.button-icon {
+    width: 22px;
+    height: 22px;
 
-    line-height: 1;
+    flex: 0 0 22px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 
-/* CONTACTO */
+/* ========================================
+   CONTACTO
+   ======================================== */
 
 .contact {
     margin-top: 38px;
@@ -204,14 +234,19 @@ h1 {
 .contact h2 {
     font-size: 21px;
 
-    margin-bottom: 17px;
+    margin-bottom: 19px;
 }
 
 
 .contact a {
-    display: block;
+    display: flex;
 
-    margin: 11px 0;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin: 13px 0;
 
     color: #30353b;
 
@@ -228,7 +263,30 @@ h1 {
 }
 
 
-/* FOOTER */
+/* ========================================
+   ICONOS DE CONTACTO
+   ======================================== */
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+
+    flex: 0 0 20px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
 
 footer {
     margin-top: 40px;
@@ -241,7 +299,9 @@ footer {
 }
 
 
-/* PANTALLAS PEQUEÑAS */
+/* ========================================
+   CELULARES PEQUEÑOS
+   ======================================== */
 
 @media (max-width: 380px) {
 
@@ -249,16 +309,38 @@ footer {
         padding: 35px 16px 25px;
     }
 
+
+    .avatar {
+        width: 84px;
+        height: 84px;
+
+        font-size: 27px;
+    }
+
+
     h1 {
         font-size: 25px;
     }
+
 
     .profession {
         font-size: 16px;
     }
 
+
     .description {
         font-size: 14px;
     }
 
+
+    .button {
+        font-size: 15px;
+    }
+
+
+    .contact a {
+        font-size: 14px;
+    }
+
 }
+```
