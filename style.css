@@ -1,346 +1,390 @@
-# `style.css`
-
-```css
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+:root {
+    color-scheme: light dark;
+    --bg: #f3f5f8;
+    --surface: rgba(255, 255, 255, 0.92);
+    --text: #171a1f;
+    --muted: #626a75;
+    --border: #dfe3e8;
+    --primary: #111827;
+    --primary-text: #ffffff;
+    --accent: #2563eb;
+    --whatsapp: #20c968;
+    --shadow: 0 18px 50px rgba(17, 24, 39, 0.08);
+}
 
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background: #f4f6f8;
-    color: #20242a;
-
     min-height: 100vh;
+    min-height: 100svh;
+    font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background:
+        radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.10), transparent 34rem),
+        var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
-/* ========================================
-   CONTENEDOR
-   ======================================== */
+.page-shell {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    padding: max(24px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+}
 
 .container {
-    width: 100%;
-    max-width: 520px;
-
-    margin: 0 auto;
-
-    padding: 45px 20px 30px;
+    width: min(100%, 620px);
+    margin: auto;
+    padding: 38px 28px 28px;
+    background: var(--surface);
+    border: 1px solid rgba(223, 227, 232, 0.9);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
 }
-
-
-/* ========================================
-   PERFIL
-   ======================================== */
 
 .profile {
     text-align: center;
-
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
-
-
-/* INICIALES */
 
 .avatar {
-    width: 96px;
-    height: 96px;
-
-    margin: 0 auto 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    width: 94px;
+    height: 94px;
+    margin: 0 auto 18px;
+    display: grid;
+    place-items: center;
     border-radius: 50%;
-
-    background: #202020;
-    color: #ffffff;
-
-    font-size: 30px;
-    font-weight: 700;
-
+    background: linear-gradient(145deg, #111827, #303846);
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
     letter-spacing: 1px;
+    box-shadow: 0 12px 28px rgba(17, 24, 39, 0.18);
 }
 
+.eyebrow {
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
 
 h1 {
-    font-size: 29px;
-    line-height: 1.2;
-
-    margin-bottom: 9px;
-
-    letter-spacing: 0.3px;
+    font-size: clamp(26px, 5vw, 34px);
+    line-height: 1.15;
+    letter-spacing: 0.2px;
 }
-
 
 .profession {
-    font-size: 18px;
-
-    font-weight: 700;
-
-    margin-bottom: 17px;
+    margin: 11px 0 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 750;
 }
 
-
-.profession span {
-    color: #777;
-    margin: 0 3px;
+.profession b {
+    color: #a0a6ae;
 }
-
 
 .description {
-    max-width: 470px;
-
+    max-width: 510px;
     margin: 0 auto;
-
+    color: var(--muted);
     font-size: 15px;
-
-    line-height: 1.65;
-
-    color: #5b6168;
+    line-height: 1.7;
 }
-
-
-/* ========================================
-   BOTONES
-   ======================================== */
 
 .buttons {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 14px;
+    display: grid;
+    gap: 12px;
 }
-
 
 .button {
+    position: relative;
     width: 100%;
-
     min-height: 58px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 11px;
-
-    padding: 15px 18px;
-
-    border-radius: 12px;
-
-    border: 1px solid #d7d9dc;
-
-    background: #ffffff;
-
-    color: #202020;
-
+    padding: 15px 48px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: #fff;
+    color: var(--text);
     text-decoration: none;
-
-    font-size: 16px;
-
-    font-weight: 700;
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
+    font-size: 15.5px;
+    font-weight: 750;
+    line-height: 1.25;
+    text-align: center;
+    box-shadow: 0 2px 7px rgba(17, 24, 39, 0.03);
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
-
 
 .button:hover {
     transform: translateY(-2px);
-
-    box-shadow:
-        0 6px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(17, 24, 39, 0.10);
+    border-color: #cbd1d8;
 }
-
 
 .button:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.99);
 }
 
-
-/* VER CV */
+.button:focus-visible,
+.contact a:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.35);
+    outline-offset: 3px;
+}
 
 .button.primary {
-    background: #202020;
-
-    color: #ffffff;
-
-    border-color: #202020;
+    background: var(--primary);
+    color: var(--primary-text);
+    border-color: var(--primary);
 }
 
-
-/* WHATSAPP */
+.button.service {
+    background: #eff6ff;
+    color: #174ea6;
+    border-color: #bfdbfe;
+}
 
 .button.whatsapp {
-    background: #25d366;
-
-    color: #ffffff;
-
-    border-color: #25d366;
+    background: var(--whatsapp);
+    color: #fff;
+    border-color: var(--whatsapp);
 }
-
-
-/* ========================================
-   ICONOS DE BOTONES
-   ======================================== */
 
 .button-icon {
     width: 22px;
     height: 22px;
-
     flex: 0 0 22px;
-
     fill: none;
-
     stroke: currentColor;
-
     stroke-width: 1.8;
-
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
-
-/* ========================================
-   CONTACTO
-   ======================================== */
+.button-arrow {
+    position: absolute;
+    right: 17px;
+    font-size: 18px;
+    opacity: 0.72;
+}
 
 .contact {
-    margin-top: 38px;
-
-    padding-top: 27px;
-
-    border-top: 1px solid #d8dade;
-
+    margin-top: 32px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
     text-align: center;
 }
 
-
 .contact h2 {
-    font-size: 21px;
-
-    margin-bottom: 19px;
+    margin-bottom: 16px;
+    font-size: 19px;
 }
-
 
 .contact a {
+    min-height: 36px;
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 9px;
-
-    margin: 13px 0;
-
-    color: #30353b;
-
+    margin: 7px 0;
+    padding: 4px 8px;
+    color: var(--muted);
     text-decoration: none;
-
-    font-size: 15px;
-
-    word-break: break-word;
+    font-size: 14px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
 }
 
-
 .contact a:hover {
+    color: var(--text);
     text-decoration: underline;
 }
 
-
-/* ========================================
-   ICONOS DE CONTACTO
-   ======================================== */
-
 .contact-icon {
-    width: 20px;
-    height: 20px;
-
-    flex: 0 0 20px;
-
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
     fill: none;
-
     stroke: currentColor;
-
     stroke-width: 1.7;
-
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
-
-/* ========================================
-   FOOTER
-   ======================================== */
-
 footer {
-    margin-top: 40px;
-
+    margin-top: 28px;
     text-align: center;
-
-    font-size: 13px;
-
-    color: #858a91;
+    color: #8a919b;
+    font-size: 12px;
 }
 
+footer span {
+    padding: 0 4px;
+}
 
-/* ========================================
-   CELULARES PEQUEÑOS
-   ======================================== */
-
-@media (max-width: 380px) {
+@media (max-width: 520px) {
+    .page-shell {
+        padding: max(12px, env(safe-area-inset-top)) 10px max(18px, env(safe-area-inset-bottom));
+    }
 
     .container {
-        padding: 35px 16px 25px;
+        padding: 30px 17px 22px;
+        border-radius: 22px;
     }
 
+    .profile {
+        margin-bottom: 26px;
+    }
 
     .avatar {
-        width: 84px;
-        height: 84px;
-
-        font-size: 27px;
-    }
-
-
-    h1 {
+        width: 82px;
+        height: 82px;
+        margin-bottom: 15px;
         font-size: 25px;
     }
 
-
-    .profession {
-        font-size: 16px;
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.4px;
     }
 
+    h1 {
+        font-size: 26px;
+    }
+
+    .profession {
+        margin-top: 9px;
+        font-size: 15.5px;
+    }
 
     .description {
         font-size: 14px;
+        line-height: 1.62;
     }
 
-
     .button {
+        min-height: 56px;
+        padding: 14px 42px;
+        border-radius: 14px;
         font-size: 15px;
     }
 
+    .contact {
+        margin-top: 27px;
+        padding-top: 22px;
+    }
 
     .contact a {
+        font-size: 13.5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .avatar {
+        width: 76px;
+        height: 76px;
+        font-size: 23px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .description {
+        font-size: 13.5px;
+    }
+
+    .button {
+        min-height: 54px;
         font-size: 14px;
     }
 
+    .button-icon {
+        width: 20px;
+        height: 20px;
+        flex-basis: 20px;
+    }
 }
-```
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .button {
+        transition: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0b0f14;
+        --surface: rgba(18, 24, 33, 0.94);
+        --text: #f3f4f6;
+        --muted: #a8b0bb;
+        --border: #2d3541;
+        --primary: #f3f4f6;
+        --primary-text: #111827;
+        --shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+    }
+
+    body {
+        background:
+            radial-gradient(circle at 50% -10%, rgba(59, 130, 246, 0.16), transparent 34rem),
+            var(--bg);
+    }
+
+    .container {
+        border-color: rgba(45, 53, 65, 0.9);
+    }
+
+    .avatar {
+        background: linear-gradient(145deg, #e5e7eb, #9ca3af);
+        color: #111827;
+    }
+
+    .button {
+        background: #151b24;
+    }
+
+    .button:hover {
+        border-color: #424b58;
+    }
+
+    .button.service {
+        background: #10233f;
+        color: #93c5fd;
+        border-color: #1e4b82;
+    }
+}
